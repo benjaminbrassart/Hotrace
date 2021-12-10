@@ -6,7 +6,7 @@
 #    By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/10 21:02:53 by bbrassar          #+#    #+#              #
-#    Updated: 2021/12/10 21:06:54 by bbrassar         ###   ########.fr        #
+#    Updated: 2021/12/10 22:45:25 by bbrassar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,12 @@ CFLAGS				= -Wall -Werror -Wextra -c -MMD -MP -I.
 
 DIR_SRC				= src
 DIR_OBJ				= obj
-SRC					= main.c
+SRC					=	main.c \
+						ft/ft_memmove.c \
+						ft/ft_memset.c \
+						ft/ft_strdup.c \
+						ft/ft_strlen.c \
+						ft/get_next_line.c
 OBJ					= $(addprefix $(DIR_OBJ)/, $(SRC:.c=.o))
 DEP					= $(OBJ:.o=.d)
 
