@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 23:32:00 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/12/10 23:33:36 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/12/11 00:13:44 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ void	btree_destroy(t_btree *root)
 		return ;
 	btree_destroy(root->left);
 	btree_destroy(root->right);
-	free(root->strval);
+	free(root->value);
 	free(root);
 }
