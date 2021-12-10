@@ -6,12 +6,12 @@
 #    By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/10 21:02:53 by bbrassar          #+#    #+#              #
-#    Updated: 2021/12/11 00:35:27 by bbrassar         ###   ########.fr        #
+#    Updated: 2021/12/11 00:41:17 by bbrassar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME				= hotrace
-CFLAGS				= -Wall -Werror -Wextra -c -MMD -MP -I.
+CFLAGS				= -Wall -Werror -Wextra -c -MMD -MP -I. -g
 
 DIR_SRC				= src
 DIR_OBJ				= obj
