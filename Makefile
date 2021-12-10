@@ -6,7 +6,7 @@
 #    By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/10 21:02:53 by bbrassar          #+#    #+#              #
-#    Updated: 2021/12/11 00:24:47 by bbrassar         ###   ########.fr        #
+#    Updated: 2021/12/11 00:35:27 by bbrassar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,7 @@ $(NAME):			$(OBJ)
 -include $(DEP)
 
 $(DIR_OBJ)/%.o:		$(DIR_SRC)/%.c
+					@mkdir -p $(@D)
 					$(CC) $(CFLAGS) $< -o $@
 
 all:				$(NAME)
