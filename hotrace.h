@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 21:54:14 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/12/11 00:15:32 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/12/11 00:25:28 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,7 @@ t_btree			*btree_create(char const *key, char *value);
 
 /* recursively destroy a tree */
 void			btree_destroy(t_btree *root);
+
+t_btree			*btree_search(t_btree *root, t_hash hash);
 
 #endif
