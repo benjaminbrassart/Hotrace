@@ -6,7 +6,7 @@
 #    By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/10 21:02:53 by bbrassar          #+#    #+#              #
-#    Updated: 2021/12/10 22:45:25 by bbrassar         ###   ########.fr        #
+#    Updated: 2021/12/11 00:04:54 by bbrassar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,9 @@ SRC					=	main.c \
 						ft/ft_memset.c \
 						ft/ft_strdup.c \
 						ft/ft_strlen.c \
-						ft/get_next_line.c
+						ft/get_next_line.c \
+						btree/btree_create.c \
+						btree/btree_destroy.c
 OBJ					= $(addprefix $(DIR_OBJ)/, $(SRC:.c=.o))
 DEP					= $(OBJ:.o=.d)
 
