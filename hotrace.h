@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 21:54:14 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/12/11 13:00:23 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/12/11 14:43:22 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 # define NOT_FOUND_SUFFIX ": Not found."
 
 typedef struct s_btree		t_btree;
-typedef struct s_list		t_list;
 typedef unsigned long long	t_hash;
 
 struct s_btree
@@ -28,13 +27,6 @@ struct s_btree
 	char	*value;
 	t_btree	*left;
 	t_btree	*right;
-};
-
-struct s_list
-{
-	t_hash	key;
-	char	*value;
-	t_list	*next;
 };
 
 int				ft_putstr(char const *s);
