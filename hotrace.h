@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 21:54:14 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/12/11 00:39:26 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/12/11 01:07:00 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # define BUFFER_SIZE 2048
 
 typedef struct s_btree	t_btree;
+typedef struct s_list	t_list;
 typedef unsigned long	t_hash;
 
 struct s_btree
@@ -24,6 +25,13 @@ struct s_btree
 	char	*value;
 	t_btree	*left;
 	t_btree	*right;
+};
+
+struct s_list
+{
+	t_hash	key;
+	char	*value;
+	t_list	*next;
 };
 
 int				get_next_line(int fd, char **line);
@@ -54,5 +62,13 @@ t_btree			*btree_search(t_btree *root, t_hash hash);
 /* insert a new node in a tree */
 t_btree			*btree_insert(t_btree **root, t_btree *node)
 				__attribute__((nonnull(1, 2)));
+
+t_list			*list_create(t_hash key, char *value);
+
+void			list_destroy(t_list **root);
+
+t_list			*list_search(t_list *root, t_hash key);
+
+t_list			*list_insert(t_list **root, t_list *list);
 
 #endif

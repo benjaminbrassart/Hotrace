@@ -6,7 +6,7 @@
 #    By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/10 21:02:53 by bbrassar          #+#    #+#              #
-#    Updated: 2021/12/11 00:41:17 by bbrassar         ###   ########.fr        #
+#    Updated: 2021/12/11 01:07:38 by bbrassar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,11 @@ SRC					=	main.c \
 						ft/get_next_line.c \
 						btree/btree_create.c \
 						btree/btree_destroy.c \
-						btree/btree_search.c
+						btree/btree_search.c \
+						list/list_create.c \
+						list/list_destroy.c \
+						list/list_insert.c \
+						list/list_search.c
 OBJ					= $(addprefix $(DIR_OBJ)/, $(SRC:.c=.o))
 DEP					= $(OBJ:.o=.d)
 
