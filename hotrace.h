@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 21:54:14 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/12/11 11:31:21 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/12/11 11:53:27 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,6 @@ struct s_list
 };
 
 int				get_next_line(int fd, char **line);
-
-void			*ft_memmove(void *dst, void const *src, unsigned int n);
-
-void			*ft_memset(void *dst, int c, unsigned int n);
-
-char			*ft_strdup(char const *s)
-				__attribute__((nonnull(1), malloc));
-
-unsigned int	ft_strlen(char const *s)
-				__attribute__((nonnull(1)));
 
 t_hash			hash(char const *s);
 
