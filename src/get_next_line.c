@@ -6,13 +6,29 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 21:53:14 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/12/11 11:07:42 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/12/11 11:50:05 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "hotrace.h"
 #include <stdlib.h>
 #include <unistd.h>
+
+static void	*ft_memmove(void *dst, void const *src, unsigned int n)
+{
+	unsigned char		*d;
+	unsigned char const	*s;
+
+	d = dst;
+	s = src;
+	if (src > dst)
+		while (n--)
+			*d++ = *s++;
+	else
+		while (n--)
+			d[n] = s[n];
+	return (dst);
+}
 
 static char	*gnl_realloc(char *line, char *buf, int line_len, int i)
 {
