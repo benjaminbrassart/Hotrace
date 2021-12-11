@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 23:25:20 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/12/11 06:12:13 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/12/11 09:27:31 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ t_btree	*btree_create(t_hash key, char *value)
 	tree = malloc(sizeof (*tree));
 	if (tree)
 	{
-		tree->height = 0;
 		tree->key = key;
 		tree->value = value;
 		tree->left = NULL;
