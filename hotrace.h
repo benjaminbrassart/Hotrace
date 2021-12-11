@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 21:54:14 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/12/11 11:53:27 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/12/11 12:11:55 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ struct s_list
 	char	*value;
 	t_list	*next;
 };
+
+int				ft_putstr(char const *s);
 
 int				get_next_line(int fd, char **line);
 
