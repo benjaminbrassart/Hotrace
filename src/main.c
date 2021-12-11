@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 21:07:05 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/12/11 02:05:03 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/12/11 12:48:42 by cloew            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,13 @@
 int	main(void)
 {
 	int		gnl;
-	char	*line;
-	int		had;
+	char		*line;
+	t_hash		key;
+	t_btree		*new;
+	t_btree		*root;
 
 	gnl = 1;
+	root = NULL;
 	while (gnl)
 	{
 		gnl = get_next_line(0, &line);
@@ -27,15 +30,27 @@ int	main(void)
 			gnl = get_next_line(0, &line);
 			while (gnl)
 			{
-				hash(line);
-				//find me
+				key = hash(line);
+				new = btree_search(root, key);
+				if (!new)
+				{
+					ft_putstr(line);
+				}
+				else
+					ft_putstr(new->value);
+				ft_putchar('\n');
 				gnl = get_next_line(0, &line);
 			}
 			break ;
 		}
-		had = hash(line); //header
-		gnl = get_next_line(0, &line);
-		//new_node(had, *line)
 	}
+		key = hash(line);
+		gnl = get_next_line(0, &line);
+		new = btree_create(key, *line);
+		if (!new)
+			break ;
+		btree_insert(&root, new);
+	}
+	btree_destroy(root);
 	return (0);
 }
