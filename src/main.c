@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 21:07:05 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/12/11 01:59:28 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/12/11 02:05:03 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	main(void)
 {
-	int	gnl;
+	int		gnl;
 	char	*line;
-	int	had;
+	int		had;
 
 	gnl = 1;
 	while (gnl)
@@ -27,15 +27,15 @@ int	main(void)
 			gnl = get_next_line(0, &line);
 			while (gnl)
 			{
-				hash(*line);
+				hash(line);
 				//find me
 				gnl = get_next_line(0, &line);
 			}
 			break ;
 		}
-		had = hash(*line);//header
-                gnl = get_next_line(0, &line);
-                //new_node(had, *line)
+		had = hash(line); //header
+		gnl = get_next_line(0, &line);
+		//new_node(had, *line)
 	}
 	return (0);
 }
