@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 21:54:14 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/12/11 00:04:12 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/12/11 01:59:53 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char			*ft_strdup(char const *s);
 
 unsigned int	ft_strlen(char const *s);
 
-unsigned int	hash_str(char const *s);
+unsigned int	hash(char const *s);
 
 /* create a single node with left and right to nil */
 t_btree			*btree_create(char *strval);

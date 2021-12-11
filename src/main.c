@@ -6,9 +6,11 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 21:07:05 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/12/11 01:31:49 by cloew            ###   ########.fr       */
+/*   Updated: 2021/12/11 01:59:28 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "hotrace.h"
 
 int	main(void)
 {
@@ -29,12 +31,11 @@ int	main(void)
 				//find me
 				gnl = get_next_line(0, &line);
 			}
-			brack
+			break ;
 		}
 		had = hash(*line);//header
                 gnl = get_next_line(0, &line);
                 //new_node(had, *line)
 	}
-
 	return (0);
 }
