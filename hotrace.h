@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 21:54:14 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/12/11 12:11:55 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/12/11 12:53:49 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # define BUFFER_SIZE 2048
 # define HASH_SEED 1125899906842597ULL
+
+# define NOT_FOUND_SUFFIX ": Not found.\n"
 
 typedef struct s_btree		t_btree;
 typedef struct s_list		t_list;

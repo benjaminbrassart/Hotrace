@@ -6,11 +6,23 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 21:07:05 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/12/11 12:48:42 by cloew            ###   ########.fr       */
+/*   Updated: 2021/12/11 12:53:45 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "hotrace.h"
+#include <unistd.h>
+
+static void	print_error(char const *keyword)
+{
+	unsigned int	i;
+
+	i = 0;
+	while (keyword[i])
+		++i;
+	write(1, keyword, i);
+	write(1, NOT_FOUND_SUFFIX, sizeof (NOT_FOUND_SUFFIX) - 1);
+}
 
 int	main(void)
 {
