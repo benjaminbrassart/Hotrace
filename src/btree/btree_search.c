@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   btree_create.c                                     :+:      :+:    :+:   */
+/*   btree_search.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/10 23:25:20 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/12/11 01:09:43 by bbrassar         ###   ########.fr       */
+/*   Created: 2021/12/11 00:21:48 by bbrassar          #+#    #+#             */
+/*   Updated: 2021/12/11 00:24:13 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "hotrace.h"
 #include <stdlib.h>
 
-t_btree	*btree_create(char const *key, char *value)
+t_btree	*btree_search(t_btree *root, t_hash hash)
 {
-	t_btree	*tree;
-
-	tree = malloc(sizeof (*tree));
-	if (tree)
-	{
-		tree->key = hash_str(key);
-		tree->value = value;
-		tree->left = NULL;
-		tree->right = NULL;
-	}
-	return (tree);
+	if (!root || root->key == hash)
+		return (root);
+	if (hash > root->key)
+		return (btree_search(root->right, hash));
+	return (btree_search(root->left, hash));
 }

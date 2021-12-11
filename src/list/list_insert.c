@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   btree_create.c                                     :+:      :+:    :+:   */
+/*   list_insert.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/10 23:25:20 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/12/11 01:09:43 by bbrassar         ###   ########.fr       */
+/*   Created: 2021/12/11 00:55:21 by bbrassar          #+#    #+#             */
+/*   Updated: 2021/12/11 01:27:49 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "hotrace.h"
 #include <stdlib.h>
 
-t_btree	*btree_create(char const *key, char *value)
+t_list	*list_insert(t_list **root, t_list *list)
 {
-	t_btree	*tree;
+	t_list	*iter;
 
-	tree = malloc(sizeof (*tree));
-	if (tree)
+	iter = list_search(*root, list->key);
+	if (iter)
 	{
-		tree->key = hash_str(key);
-		tree->value = value;
-		tree->left = NULL;
-		tree->right = NULL;
+		free(iter->value);
+		iter->value = list->value;
+		free(list);
+		return (iter);
 	}
-	return (tree);
+	list->next = *root;
+	return (*root = list);
 }

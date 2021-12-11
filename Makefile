@@ -6,12 +6,12 @@
 #    By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/10 21:02:53 by bbrassar          #+#    #+#              #
-#    Updated: 2021/12/11 00:05:46 by bbrassar         ###   ########.fr        #
+#    Updated: 2021/12/11 02:01:26 by bbrassar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME				= hotrace
-CFLAGS				= -Wall -Werror -Wextra -c -MMD -MP -I.
+CFLAGS				= -Wall -Werror -Wextra -c -MMD -MP -I. -g
 
 DIR_SRC				= src
 DIR_OBJ				= obj
@@ -22,7 +22,12 @@ SRC					=	main.c \
 						ft/ft_strlen.c \
 						ft/get_next_line.c \
 						btree/btree_create.c \
-						btree/btree_destroy.c
+						btree/btree_destroy.c \
+						btree/btree_search.c \
+						list/list_create.c \
+						list/list_destroy.c \
+						list/list_insert.c \
+						list/list_search.c
 OBJ					= $(addprefix $(DIR_OBJ)/, $(SRC:.c=.o))
 DEP					= $(OBJ:.o=.d)
 

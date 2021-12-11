@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   btree_create.c                                     :+:      :+:    :+:   */
+/*   list_destroy.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/10 23:25:20 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/12/11 01:09:43 by bbrassar         ###   ########.fr       */
+/*   Created: 2021/12/11 00:55:35 by bbrassar          #+#    #+#             */
+/*   Updated: 2021/12/11 01:03:36 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "hotrace.h"
 #include <stdlib.h>
 
-t_btree	*btree_create(char const *key, char *value)
+void	list_destroy(t_list **list)
 {
-	t_btree	*tree;
+	t_list	*iter;
+	t_list	*slow;
 
-	tree = malloc(sizeof (*tree));
-	if (tree)
+	iter = *list;
+	while (iter)
 	{
-		tree->key = hash_str(key);
-		tree->value = value;
-		tree->left = NULL;
-		tree->right = NULL;
+		slow = iter->next;
+		free(iter->value);
+		free(iter);
+		iter = slow;
 	}
-	return (tree);
+	*list = NULL;
 }
