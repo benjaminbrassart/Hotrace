@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 21:54:14 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/12/11 02:05:54 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/12/11 09:03:45 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,22 @@ void			btree_destroy(t_btree *root);
 t_btree			*btree_search(t_btree *root, t_hash hash);
 
 /* insert a new node in a tree */
-t_btree			*btree_insert(t_btree **root, t_btree *node)
+void			btree_insert(t_btree **root, t_btree *node)
 				__attribute__((nonnull(1, 2)));
+
+int				btree_height(t_btree *node);
+
+int				btree_balance_factor(t_btree *node);
+
+t_btree			*btree_llrotate(t_btree *node);
+
+t_btree			*btree_lrrotate(t_btree *node);
+
+t_btree			*btree_rlrotate(t_btree *node);
+
+t_btree			*btree_rrrotate(t_btree *node);
+
+t_btree			*btree_balance(t_btree *node);
 
 t_list			*list_create(t_hash key, char *value);
 

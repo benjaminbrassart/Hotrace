@@ -6,11 +6,12 @@
 #    By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/10 21:02:53 by bbrassar          #+#    #+#              #
-#    Updated: 2021/12/11 02:06:05 by bbrassar         ###   ########.fr        #
+#    Updated: 2021/12/11 08:37:14 by bbrassar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME				= hotrace
+CC					= cc
 CFLAGS				= -Wall -Werror -Wextra -c -MMD -MP -I. -g
 
 DIR_SRC				= src
@@ -25,6 +26,9 @@ SRC					=	main.c \
 						btree/btree_create.c \
 						btree/btree_destroy.c \
 						btree/btree_search.c \
+						btree/btree_insert.c \
+						btree/btree_balance.c \
+						btree/btree_height.c \
 						list/list_create.c \
 						list/list_destroy.c \
 						list/list_insert.c \
