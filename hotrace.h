@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 21:54:14 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/12/11 02:01:04 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/12/11 02:05:54 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,11 @@ char			*ft_strdup(char const *s)
 unsigned int	ft_strlen(char const *s)
 				__attribute__((nonnull(1)));
 
-unsigned int	hash(char const *s);
+t_hash			hash(char const *s);
 
 /* create a single node with left and right to nil */
-t_btree			*btree_create(char const *key, char *value)
-				__attribute__((nonnull(1), malloc));
+t_btree			*btree_create(t_hash key, char *value)
+				__attribute__((malloc));
 
 /* recursively destroy a tree */
 void			btree_destroy(t_btree *root);

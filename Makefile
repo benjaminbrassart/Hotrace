@@ -6,7 +6,7 @@
 #    By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/10 21:02:53 by bbrassar          #+#    #+#              #
-#    Updated: 2021/12/11 02:01:26 by bbrassar         ###   ########.fr        #
+#    Updated: 2021/12/11 02:06:05 by bbrassar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ CFLAGS				= -Wall -Werror -Wextra -c -MMD -MP -I. -g
 DIR_SRC				= src
 DIR_OBJ				= obj
 SRC					=	main.c \
+						hash.c \
 						ft/ft_memmove.c \
 						ft/ft_memset.c \
 						ft/ft_strdup.c \
