@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 21:54:14 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/12/11 09:03:45 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/12/11 09:43:36 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 # define HOTRACE_H
 
 # define BUFFER_SIZE 2048
+# define HASH_SEED 1125899906842597ULL
 
-typedef struct s_btree	t_btree;
-typedef struct s_list	t_list;
-typedef unsigned long	t_hash;
+typedef struct s_btree		t_btree;
+typedef struct s_list		t_list;
+typedef unsigned long long	t_hash;
 
 struct s_btree
 {
