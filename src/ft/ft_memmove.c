@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/11 12:09:45 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/12/12 15:47:32 by bbrassar         ###   ########.fr       */
+/*   Created: 2021/12/12 15:50:19 by bbrassar          #+#    #+#             */
+/*   Updated: 2021/12/12 15:50:30 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "hotrace.h"
-#include <unistd.h>
-
-int	ft_putstr(char const *s)
+void	*ft_memmove(void *dst, void const *src, unsigned int n)
 {
-	unsigned int	n;
+	unsigned char		*d;
+	unsigned char const	*s;
 
-	if (!s)
-		return (0);
-	n = 0;
-	while (s[n])
-		++n;
-	return (write(1, s, n));
+	d = dst;
+	s = src;
+	if (src > dst)
+		while (n--)
+			*d++ = *s++;
+	else
+		while (n--)
+			d[n] = s[n];
+	return (dst);
 }

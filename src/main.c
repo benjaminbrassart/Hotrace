@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 21:07:05 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/12/11 13:28:14 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/12/12 20:42:48 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,19 +34,16 @@ static int	parse_init(t_btree **root)
 	while (1)
 	{
 		if (get_next_line(0, &line) <= 0)
-			return (0);
+			break ;
 		if (!*line)
 			break ;
 		key = hash(line);
 		free(line);
 		if (get_next_line(0, &line) <= 0)
-			return (0);
+			break ;
 		new = btree_create(key, line);
 		if (!new)
-		{
-			free(line);
-			return (0);
-		}
+			break ;
 		btree_insert(root, new);
 	}
 	free(line);

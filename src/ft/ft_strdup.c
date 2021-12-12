@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/11 12:09:45 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/12/12 15:47:32 by bbrassar         ###   ########.fr       */
+/*   Created: 2021/12/12 15:45:35 by bbrassar          #+#    #+#             */
+/*   Updated: 2021/12/12 15:46:54 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "hotrace.h"
-#include <unistd.h>
+#include <stdlib.h>
 
-int	ft_putstr(char const *s)
+char	*ft_strdup(char const *s)
 {
+	char			*new_s;
 	unsigned int	n;
 
-	if (!s)
-		return (0);
 	n = 0;
 	while (s[n])
 		++n;
-	return (write(1, s, n));
+	new_s = malloc(sizeof (*new_s) * (n + 1));
+	if (new_s)
+		ft_memmove(new_s, s, n + 1);
+	return (new_s);
 }

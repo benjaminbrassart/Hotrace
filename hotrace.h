@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 21:54:14 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/12/11 14:43:22 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/12/12 15:50:56 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,12 @@ struct s_btree
 };
 
 int				ft_putstr(char const *s);
+
+void			*ft_memmove(void *dst, void const *src, unsigned int n);
+
+void			*ft_memset(void *dst, int c, unsigned int n);
+
+char			*ft_strdup(char const *s);
 
 int				get_next_line(int fd, char **line);
 

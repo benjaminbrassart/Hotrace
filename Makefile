@@ -6,7 +6,7 @@
 #    By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/10 21:02:53 by bbrassar          #+#    #+#              #
-#    Updated: 2021/12/11 12:12:16 by bbrassar         ###   ########.fr        #
+#    Updated: 2021/12/12 15:50:38 by bbrassar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,10 @@ DIR_SRC				= src
 DIR_OBJ				= obj
 SRC					=	main.c \
 						hash.c \
+						ft/ft_memmove.c \
+						ft/ft_memset.c \
 						ft/ft_putstr.c \
+						ft/ft_strdup.c \
 						ft/get_next_line.c \
 						btree/btree_create.c \
 						btree/btree_destroy.c \
