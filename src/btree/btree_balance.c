@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 06:35:20 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/12/11 08:55:26 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/12/12 15:16:18 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,30 +14,21 @@
 
 t_btree	*btree_balance(t_btree *node)
 {
-	t_btree	*new_root;
-	int		factor;
+	int const	balance = btree_balance_factor(node);
 
-	if (node->left)
-		node->left = btree_balance(node->left);
-	if (node->right)
-		node->right = btree_balance(node->right);
-	factor = btree_balance_factor(node);
-	new_root = node;
-	if (factor >= 2)
+	if (balance >= 2)
 	{
 		if (btree_balance_factor(node->left) <= -1)
-			new_root = btree_lrrotate(node);
-		else
-			new_root = btree_llrotate(node);
+			return (btree_lrrotate(node));
+		return (btree_llrotate(node));
 	}
-	else if (factor <= -2)
+	else if (balance <= -2)
 	{
 		if (btree_balance_factor(node->right) >= 1)
-			new_root = btree_rlrotate(node);
-		else
-			new_root = btree_rrrotate(node);
+			return (btree_rlrotate(node));
+		return (btree_rrrotate(node));
 	}
-	return (new_root);
+	return (node);
 }
 
 t_btree	*btree_llrotate(t_btree *node)

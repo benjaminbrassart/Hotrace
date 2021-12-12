@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 21:07:05 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/12/12 20:42:48 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/12/12 21:22:11 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ static void	exec_get_keys(t_btree **root)
 		ft_putstr("\n");
 		free(line);
 	}
+	free(line);
 }
 
 int	main(void)
