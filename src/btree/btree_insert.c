@@ -6,12 +6,18 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 00:06:24 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/12/11 08:47:58 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/12/12 21:21:43 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "hotrace.h"
 #include <stdlib.h>
+
+static void	delete_node(t_btree *node)
+{
+	free(node->value);
+	free(node);
+}
 
 void	btree_insert(t_btree **root, t_btree *node)
 {
@@ -32,6 +38,8 @@ void	btree_insert(t_btree **root, t_btree *node)
 			sub = sub->left;
 		else if (node->key > sub->key)
 			sub = sub->right;
+		else
+			return (delete_node(node));
 	}
 	if (node->key < slow->key)
 		slow->left = node;
