@@ -31,3 +31,5 @@ We achieved this by implementing a HashMap based on an AVL binary tree.
 Even though it could be improved, we still managed to get good performance.
 
 This was achieved with Carmen LOEW (cloew), huge thanks to her!
+
+Final grade: 35/100
